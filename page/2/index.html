@@ -250,6 +250,7 @@
       
         <p>单例模式算是设计模式中最容易理解的，最容易手写代码的设计模式。面试时也会常常会被问到用过什么设计模式时，最能脱口而出的就是单例模式了。</p>
 <p>具体的定义优点什么的就不详述了，这里主要记录下我平常写单例及优化的一点心得。</p>
+<p><a href="/download/meetingSystem.apk">点击下载</a></p>
 <h3 id="懒汉式"><a href="#懒汉式" class="headerlink" title="懒汉式"></a>懒汉式</h3><p>很多人包括我写单例的时候，第一想到的就是懒汉式</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">public class Singleton &#123;</span><br><span class="line">	private static Singleton instance;</span><br><span class="line">    private Singleton ()&#123;&#125;</span><br><span class="line"></span><br><span class="line">	public static Singleton getInstance() &#123;</span><br><span class="line">	if (instance == null) &#123;</span><br><span class="line">		instance = new Singleton();</span><br><span class="line">	&#125;</span><br><span class="line">		return instance;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>代码很简单，而且是懒加载，只有调用getInstance方法是才会初始化。但是这样是线程不安全的，即当多个线程并行调用getInstance的时候，就会创建多个实例，不能正常工作。</p>
@@ -283,6 +284,83 @@
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2016/07/09/singleton-study/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-App前后台运行状态判断" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/07/08/App前后台运行状态判断/">App前后台运行状态判断</a>
+    </h1>
+  
+
+        
+        <a href="/2016/07/08/App前后台运行状态判断/" class="archive-article-date">
+  	<time datetime="2016-07-07T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-07-08</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>经常在一些场景中，需要判断App是否在后台运行，从而做一些相应的处理。比如切换到后台运行后显示解锁界面等。接下来记录下平常用到的几种方法。</p>
+<h3 id="方法一"><a href="#方法一" class="headerlink" title="方法一"></a>方法一</h3><p>利用ActivityManager，获取RuningAppProcessInfo或者RuningTaskInfo这两种方法，代码如下：<br>1、获取RuningAppProcessInfo</p>
+        
+          <a class="article-more-a" href="/2016/07/08/App前后台运行状态判断/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Android</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2016/07/08/App前后台运行状态判断/">展开全文 >></a>
         </p>
       
 
@@ -361,83 +439,6 @@
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2016/07/08/ButterKnife基本使用/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-App前后台运行状态判断" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/07/08/App前后台运行状态判断/">App前后台运行状态判断</a>
-    </h1>
-  
-
-        
-        <a href="/2016/07/08/App前后台运行状态判断/" class="archive-article-date">
-  	<time datetime="2016-07-07T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-07-08</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>经常在一些场景中，需要判断App是否在后台运行，从而做一些相应的处理。比如切换到后台运行后显示解锁界面等。接下来记录下平常用到的几种方法。</p>
-<h3 id="方法一"><a href="#方法一" class="headerlink" title="方法一"></a>方法一</h3><p>利用ActivityManager，获取RuningAppProcessInfo或者RuningTaskInfo这两种方法，代码如下：<br>1、获取RuningAppProcessInfo</p>
-        
-          <a class="article-more-a" href="/2016/07/08/App前后台运行状态判断/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Android</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2016/07/08/App前后台运行状态判断/">展开全文 >></a>
         </p>
       
 
@@ -564,7 +565,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Glide</a>
+                <a href="javascript:void(0)" class="js-tag color3">Android</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -572,11 +573,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Android</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Material Design</a>
+                <a href="javascript:void(0)" class="js-tag color1">Glide</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -585,6 +582,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">设计模式</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Material Design</a>
               </li>
              
               <li class="article-tag-list-item">
